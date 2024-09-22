@@ -1,7 +1,7 @@
 var http = require("http");
 //TODO - Use Employee Module here
 console.log("Lab 03 -  NodeJs");
-const employeeModule = require('./Employee');
+const employeeModule = require('./employee');
 
 //TODO - Fix any errors you found working with lab exercise
 
@@ -19,13 +19,13 @@ const server = http.createServer((req, res) => {
             res.write('<h1>Welcome to Lab Exercise 03</h1>');
         }
 
-        else if (req.url === '/Employee') {
+        else if (req.url === '/employee') {
             //TODO - Display all details for employees in JSON format
             res.writeHead(200, { 'Content-Type': 'application/json' });
             res.end(JSON.stringify(employeeModule));
         }
 
-        else if (req.url === '/Employee/names') {
+        else if (req.url === '/employee/names') {
             //TODO - Display only all employees {first name + lastname} in Ascending order in JSON Array
             //e.g. [ "Ash Lee", "Mac Mohan", "Pritesh Patel"]
             const names = employeeModule.map(employee => `${employee.firstName} ${employee.lastName}`).sort();
@@ -33,7 +33,7 @@ const server = http.createServer((req, res) => {
             res.end(JSON.stringify(names));
         }
 
-        else if (req.url === '/Employee/totalsalary') {
+        else if (req.url === '/employee/totalsalary') {
             //TODO - Display Sum of all employees salary in given JSON format 
             //e.g. { "total_salary" : 100 }  
             const totalSalary = employeeModule.reduce((total, employee) => total + employee.Salary, 0);
