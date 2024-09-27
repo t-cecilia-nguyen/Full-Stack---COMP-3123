@@ -3,3 +3,5 @@ lectures/
 *.zip
 *.png
 *.pdf
+assignments/
+lab4/node_modules/
