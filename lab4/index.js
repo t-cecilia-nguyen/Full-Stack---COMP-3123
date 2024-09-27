@@ -1,17 +1,32 @@
 const express = require('express');
 const app = express();
-const SERVER_PORT = process.env.port || 3000;
+const SERVER_PORT = process.env.port || 3001;
 
-// http://localhost:3000/
-app.get('/', (req, res) => {
-    res.send('Hello World');
+// GET /hello
+app.get('/hello', (req, res) => {
+    res.type('text/plain');
+    res.send('Hello Express JS');
 });
 
-app.post('/', (req, res) => {
-    res.send('POST - Hello World');
+// GET /user
+app.get('/user', (req, res) => {
+    const { firstname = 'Pritesh', lastname = 'Patel' } = req.query;
+    res.json({
+        firstname: firstname,
+        lastname: lastname
+    });
 });
 
-// Listening to the server
+// POST /user
+app.post('/user/:firstname/:lastname', (req, res) => {
+    const { firstname, lastname } = req.params;
+    res.json({
+        firstname: firstname,
+        lastname: lastname
+    });
+});
+
+// Start server
 app.listen(SERVER_PORT, () => {
     console.log(`Server is running on http://localhost:${SERVER_PORT}`);
 });
