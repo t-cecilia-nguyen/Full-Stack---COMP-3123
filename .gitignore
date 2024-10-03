@@ -5,3 +5,4 @@ lectures/
 *.pdf
 assignments/
 lab4/node_modules/
+tests/
