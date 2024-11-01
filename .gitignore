@@ -6,4 +6,5 @@ lectures/
 assignments/
 lab4/node_modules/
 tests/
-/postman_exports
+/postman_exports/
+/lab5/pictures/
