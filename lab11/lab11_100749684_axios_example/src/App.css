@@ -1,0 +1,37 @@
+.title {
+  margin: 10px;
+  padding: 10px;
+  background-color: #009E60;
+  text-align: center;
+}
+
+.listUser {
+  background-color: #1980a6;
+  margin: 10px;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.boldText {
+  font-weight: bold;
+}
+
+.person-details {
+  display: flex;
+  align-items: center;
+}
+
+.picture {
+  flex: 0 0 auto;
+  margin-right: 20px;
+}
+
+.picture img {
+  border-radius: 50%;
+}
+
+.info div {
+  margin-bottom: 10px;
+}
